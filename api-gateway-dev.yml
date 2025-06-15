@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: api-gateway
+
+  cloud:
+    gateway:
+      routes:
+        - id: booking-route
+          uri: lb://booking-service
+          predicates:
+            - Path=/booking/**
+        - id: feedback-route
+          uri: lb://feedback-service
+          predicates:
+            - Path=/feedback/**
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
