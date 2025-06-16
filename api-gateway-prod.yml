@@ -18,6 +18,10 @@ spring:
           filters:
             - StripPrefix=1
 
+logging:
+  level:
+    org.springframework.cloud.gateway: DEBUG
+
 eureka:
   client:
     service-url:
