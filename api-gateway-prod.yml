@@ -9,10 +9,14 @@ spring:
           uri: lb://booking-service
           predicates:
             - Path=/booking/**
+          filters:
+            - StripPrefix=1
         - id: feedback-route
           uri: lb://feedback-service
           predicates:
             - Path=/feedback/**
+          filters:
+            - StripPrefix=1
 
 eureka:
   client:
