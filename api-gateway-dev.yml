@@ -6,7 +6,7 @@ spring:
     gateway:
       routes:
         - id: booking-route
-          uri: lb://BOOKING-SERVICE
+          uri: lb://booking-service
           predicates:
             - Path=/booking/**
           filters:
